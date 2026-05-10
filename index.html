@@ -74,8 +74,8 @@
   .app{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:24px 24px 120px;width:100%}
 
   .topbar{
-    display:flex;align-items:center;justify-content:space-between;gap:24px;
-    padding:14px 18px;margin-bottom:24px;
+    display:flex;align-items:center;justify-content:space-between;gap:28px;
+    padding:22px 28px;margin-bottom:24px;
     background:var(--glass-medium);
     backdrop-filter:blur(24px) saturate(180%);
     -webkit-backdrop-filter:blur(24px) saturate(180%);
@@ -83,23 +83,23 @@
     border-radius:var(--radius);
     box-shadow:var(--glass-shadow-inner), var(--glass-shadow-drop);
   }
-  .brand{display:flex;align-items:center;gap:14px;min-width:0;flex:1}
+  .brand{display:flex;align-items:center;gap:22px;min-width:0;flex:1}
   .brand-photo{
-    width:96px;height:96px;border-radius:50%;object-fit:cover;
-    border:3px solid rgba(255,255,255,.95);
-    box-shadow:0 0 0 1px var(--primary), 0 6px 18px rgba(200,16,46,.28);
+    width:140px;height:140px;border-radius:50%;object-fit:cover;
+    border:4px solid rgba(255,255,255,.95);
+    box-shadow:0 0 0 1px var(--primary), 0 8px 24px rgba(200,16,46,.30);
     flex-shrink:0;background:linear-gradient(135deg,#c8102e,#7a0a1c)
   }
   .brand-text{min-width:0}
   .brand-text h1{
-    font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;
-    margin:0;letter-spacing:-.015em;line-height:1.15;
+    font-family:'Fraunces',serif;font-weight:700;font-size:2.1rem;
+    margin:0;letter-spacing:-.02em;line-height:1.1;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
     color:var(--ink)
   }
   .brand-text .tag{
-    font-size:.7rem;color:var(--ink-soft);text-transform:uppercase;
-    letter-spacing:.22em;margin-top:4px;font-weight:700
+    font-size:.78rem;color:var(--ink-soft);text-transform:uppercase;
+    letter-spacing:.24em;margin-top:8px;font-weight:700
   }
   .top-actions{display:flex;gap:8px;flex-shrink:0}
 
@@ -428,9 +428,11 @@
 
   @media (max-width:768px){
     .app{padding:14px 12px 100px}
-    .topbar{padding:12px 14px;flex-wrap:wrap;gap:12px}
-    .brand-text h1{font-size:1.05rem}
-    .brand-photo{width:64px;height:64px;border-width:2px}
+    .topbar{padding:16px 18px;flex-wrap:wrap;gap:16px}
+    .brand{gap:16px}
+    .brand-text h1{font-size:1.45rem}
+    .brand-text .tag{font-size:.66rem;margin-top:5px}
+    .brand-photo{width:88px;height:88px;border-width:3px}
     .month-title{font-size:1.7rem}
     .top-actions .btn-text{display:none}
     .day{min-height:64px;padding:6px 4px;gap:2px}
@@ -890,15 +892,15 @@
     const headerCellStyle = 'padding:14px 6px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.22em;width:14.285%;border-bottom:1px solid rgba(120,80,40,.10);';
 
     const photoHTML = photoSrc
-      ? `<img src="${photoSrc}" style="width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 0 0 1px #c8102e,0 6px 18px rgba(200,16,46,.28);flex-shrink:0;display:block;">`
-      : `<div style="width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,#c8102e,#7a0a1c);box-shadow:0 0 0 3px #fff,0 0 0 4px #c8102e;flex-shrink:0;"></div>`;
+      ? `<img src="${photoSrc}" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 0 0 1px #c8102e,0 8px 24px rgba(200,16,46,.30);flex-shrink:0;display:block;">`
+      : `<div style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#c8102e,#7a0a1c);box-shadow:0 0 0 4px #fff,0 0 0 5px #c8102e;flex-shrink:0;"></div>`;
 
     wrapper.innerHTML = `
-      <div style="display:flex;align-items:center;gap:18px;padding:18px 22px;margin-bottom:24px;background:#fff;border-radius:18px;border:1px solid rgba(0,0,0,.06);box-shadow:0 1px 2px rgba(80,40,20,.04),0 8px 24px rgba(80,40,20,.06);">
+      <div style="display:flex;align-items:center;gap:24px;padding:24px 28px;margin-bottom:24px;background:#fff;border-radius:18px;border:1px solid rgba(0,0,0,.06);box-shadow:0 1px 2px rgba(80,40,20,.04),0 8px 24px rgba(80,40,20,.06);">
         ${photoHTML}
         <div>
-          <div style="font-family:'Fraunces',serif;font-size:22px;font-weight:700;letter-spacing:-.015em;line-height:1.15;">Agenda Expedito Netto</div>
-          <div style="font-size:11px;text-transform:uppercase;letter-spacing:.22em;color:#5a514a;margin-top:5px;font-weight:700;">Agenda Oficial · ${y}</div>
+          <div style="font-family:'Fraunces',serif;font-size:32px;font-weight:700;letter-spacing:-.02em;line-height:1.1;">Agenda Expedito Netto</div>
+          <div style="font-size:12px;text-transform:uppercase;letter-spacing:.24em;color:#5a514a;margin-top:8px;font-weight:700;">Agenda Oficial · ${y}</div>
         </div>
       </div>
 
