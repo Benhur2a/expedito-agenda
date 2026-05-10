@@ -13,21 +13,21 @@
     --ink:#1a1411;
     --ink-soft:#5a514a;
     --ink-muted:#9a8f86;
-    --primary:#c8102e;
-    --primary-deep:#7a0a1c;
-    --primary-glow:rgba(200,16,46,.18);
+    --primary:#1e3a8a;
+    --primary-deep:#0f1d4a;
+    --primary-glow:rgba(30,58,138,.20);
 
     --glass-light:rgba(255,253,250,.55);
     --glass-medium:rgba(255,253,250,.72);
     --glass-heavy:rgba(255,253,250,.86);
     --glass-edge:rgba(255,255,255,.85);
     --glass-edge-soft:rgba(255,255,255,.45);
-    --glass-shadow-inner:inset 0 1px 0 rgba(255,255,255,.95), inset 0 -1px 0 rgba(120,80,40,.06), inset 1px 0 0 rgba(255,255,255,.5), inset -1px 0 0 rgba(120,80,40,.04);
-    --glass-shadow-drop:0 1px 2px rgba(80,40,20,.04), 0 12px 32px rgba(80,40,20,.10), 0 32px 64px rgba(80,40,20,.06);
-    --glass-shadow-deep:0 8px 24px rgba(80,40,20,.12), 0 32px 64px rgba(80,40,20,.18);
+    --glass-shadow-inner:inset 0 1px 0 rgba(255,255,255,.95), inset 0 -1px 0 rgba(40,60,90,.06), inset 1px 0 0 rgba(255,255,255,.5), inset -1px 0 0 rgba(40,60,90,.04);
+    --glass-shadow-drop:0 1px 2px rgba(40,60,90,.04), 0 12px 32px rgba(40,60,90,.10), 0 32px 64px rgba(40,60,90,.06);
+    --glass-shadow-deep:0 8px 24px rgba(40,60,90,.12), 0 32px 64px rgba(40,60,90,.18);
 
-    --cat-publico:#c8102e;
-    --cat-reuniao:#1f4e8c;
+    --cat-publico:#1e3a8a;
+    --cat-reuniao:#0d7490;
     --cat-visita:#1f6f4a;
     --cat-imprensa:#a04e0f;
     --cat-pessoal:#5b3a8a;
@@ -44,11 +44,11 @@
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
     min-height:100vh;
-    background:#f7eee2;
+    background:#eef2f8;
     background-image:
-      radial-gradient(circle at 100% 0%, #ffd8c0 0%, transparent 40%),
-      radial-gradient(circle at 0% 100%, #ffe0d4 0%, transparent 45%),
-      linear-gradient(135deg, #faf2e6 0%, #f5e8d6 100%);
+      radial-gradient(circle at 100% 0%, #d8e3f0 0%, transparent 40%),
+      radial-gradient(circle at 0% 100%, #dde6f3 0%, transparent 45%),
+      linear-gradient(135deg, #f3f6fc 0%, #e6ecf6 100%);
     background-attachment:fixed;
   }
   body::before, body::after{
@@ -58,16 +58,16 @@
   }
   body::before{
     top:-10%;left:-5%;width:55vw;height:55vw;
-    background:radial-gradient(circle, rgba(200,16,46,.32) 0%, transparent 70%);
+    background:radial-gradient(circle, rgba(30,58,138,.32) 0%, transparent 70%);
   }
   body::after{
     bottom:-15%;right:-10%;width:60vw;height:60vw;
-    background:radial-gradient(circle, rgba(255,160,60,.30) 0%, transparent 70%);
+    background:radial-gradient(circle, rgba(80,150,220,.30) 0%, transparent 70%);
   }
   .ambient{
     position:fixed;top:30%;left:50%;transform:translate(-50%,-50%);
     width:40vw;height:40vw;border-radius:50%;
-    background:radial-gradient(circle, rgba(255,200,140,.4) 0%, transparent 70%);
+    background:radial-gradient(circle, rgba(150,190,235,.42) 0%, transparent 70%);
     filter:blur(80px);pointer-events:none;z-index:0;
   }
 
@@ -87,8 +87,8 @@
   .brand-photo{
     width:140px;height:140px;border-radius:50%;object-fit:cover;
     border:4px solid rgba(255,255,255,.95);
-    box-shadow:0 0 0 1px var(--primary), 0 8px 24px rgba(200,16,46,.30);
-    flex-shrink:0;background:linear-gradient(135deg,#c8102e,#7a0a1c)
+    box-shadow:0 0 0 1px var(--primary), 0 8px 24px rgba(30,58,138,.32);
+    flex-shrink:0;background:linear-gradient(135deg,#1e3a8a,#0f1d4a)
   }
   .brand-text{min-width:0}
   .brand-text h1{
@@ -112,13 +112,13 @@
     border:1px solid var(--glass-edge);
     color:var(--ink);cursor:pointer;
     display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
-    box-shadow:var(--glass-shadow-inner), 0 2px 8px rgba(80,40,20,.06);
+    box-shadow:var(--glass-shadow-inner), 0 2px 8px rgba(40,60,90,.06);
     transition:all .2s cubic-bezier(.4,0,.2,1)
   }
   .btn:hover{
     background:var(--glass-heavy);
     transform:translateY(-1px);
-    box-shadow:var(--glass-shadow-inner), 0 8px 20px rgba(80,40,20,.12)
+    box-shadow:var(--glass-shadow-inner), 0 8px 20px rgba(40,60,90,.12)
   }
   .btn:active{transform:translateY(0)}
   .btn-primary{
@@ -129,7 +129,7 @@
   .btn-primary:hover{
     background:linear-gradient(135deg,var(--primary) 0%, var(--primary-deep) 100%);
     border-color:rgba(255,255,255,.2);
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.25), 0 8px 22px rgba(200,16,46,.4)
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.25), 0 8px 22px rgba(30,58,138,.4)
   }
   .btn svg{width:16px;height:16px}
 
@@ -152,7 +152,7 @@
     border:1px solid var(--glass-edge);
     cursor:pointer;display:inline-flex;align-items:center;justify-content:center;
     color:var(--ink);
-    box-shadow:var(--glass-shadow-inner), 0 2px 8px rgba(80,40,20,.08);
+    box-shadow:var(--glass-shadow-inner), 0 2px 8px rgba(40,60,90,.08);
     transition:all .2s cubic-bezier(.4,0,.2,1)
   }
   .nav-btn:hover{
@@ -168,7 +168,7 @@
     -webkit-backdrop-filter:blur(16px) saturate(180%);
     border:1px solid var(--glass-edge);
     color:var(--ink-soft);cursor:pointer;
-    box-shadow:var(--glass-shadow-inner), 0 2px 8px rgba(80,40,20,.08);
+    box-shadow:var(--glass-shadow-inner), 0 2px 8px rgba(40,60,90,.08);
     transition:all .2s cubic-bezier(.4,0,.2,1)
   }
   .today-btn:hover{color:var(--ink);transform:translateY(-1px)}
@@ -187,7 +187,7 @@
   .weekdays{
     display:grid;grid-template-columns:repeat(7,minmax(0,1fr));
     background:rgba(255,253,250,.4);
-    border-bottom:1px solid rgba(120,80,40,.08)
+    border-bottom:1px solid rgba(60,80,110,.08)
   }
   .weekday{
     padding:14px 6px;text-align:center;font-size:.66rem;font-weight:800;
@@ -201,15 +201,15 @@
   }
   .day{
     min-height:120px;padding:10px;
-    border-right:1px solid rgba(120,80,40,.06);
-    border-bottom:1px solid rgba(120,80,40,.06);
+    border-right:1px solid rgba(60,80,110,.06);
+    border-bottom:1px solid rgba(60,80,110,.06);
     cursor:pointer;position:relative;
     display:flex;flex-direction:column;gap:5px;
     min-width:0;overflow:hidden;
     transition:background .18s ease
   }
   .day:nth-child(7n){border-right:none}
-  .day.empty{background:rgba(120,80,40,.025);cursor:default}
+  .day.empty{background:rgba(60,80,110,.025);cursor:default}
   .day:hover:not(.empty){background:rgba(255,255,255,.5)}
   .day.today{
     background:linear-gradient(180deg, var(--primary-glow) 0%, rgba(255,200,140,.08) 100%)
@@ -225,7 +225,7 @@
     width:28px;height:28px;
     background:linear-gradient(135deg,var(--primary) 0%, var(--primary-deep) 100%);
     color:#fff;border-radius:50%;font-size:.85rem;font-weight:700;padding:0;
-    box-shadow:0 2px 8px rgba(200,16,46,.4), inset 0 1px 0 rgba(255,255,255,.3)
+    box-shadow:0 2px 8px rgba(30,58,138,.4), inset 0 1px 0 rgba(255,255,255,.3)
   }
   .events-list{
     display:flex;flex-direction:column;gap:3px;
@@ -239,12 +239,12 @@
     -webkit-backdrop-filter:blur(8px);
     border-left:3px solid var(--cat-outro);
     background:rgba(255,253,250,.7);
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.7), 0 1px 2px rgba(80,40,20,.04);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.7), 0 1px 2px rgba(40,60,90,.04);
     color:var(--ink);
     max-width:100%;min-width:0
   }
-  .event-pill.cat-publico{border-left-color:var(--cat-publico);background:rgba(200,16,46,.10);color:#7a0a1c}
-  .event-pill.cat-reuniao{border-left-color:var(--cat-reuniao);background:rgba(31,78,140,.10);color:#16365e}
+  .event-pill.cat-publico{border-left-color:var(--cat-publico);background:rgba(30,58,138,.10);color:#0f1d4a}
+  .event-pill.cat-reuniao{border-left-color:var(--cat-reuniao);background:rgba(13,116,144,.10);color:#0a4456}
   .event-pill.cat-visita{border-left-color:var(--cat-visita);background:rgba(31,111,74,.10);color:#154e35}
   .event-pill.cat-imprensa{border-left-color:var(--cat-imprensa);background:rgba(160,78,15,.10);color:#6f370b}
   .event-pill.cat-pessoal{border-left-color:var(--cat-pessoal);background:rgba(91,58,138,.10);color:#3e2860}
@@ -280,7 +280,7 @@
   .panel.open{transform:translateX(0)}
   .panel-header{
     padding:26px 28px 18px;
-    border-bottom:1px solid rgba(120,80,40,.08);
+    border-bottom:1px solid rgba(60,80,110,.08);
     position:relative;flex-shrink:0
   }
   .panel-close{
@@ -306,8 +306,8 @@
   .panel-body{flex:1;overflow-y:auto;padding:22px 28px;min-height:0}
   .panel-body::-webkit-scrollbar{width:6px}
   .panel-body::-webkit-scrollbar-track{background:transparent}
-  .panel-body::-webkit-scrollbar-thumb{background:rgba(120,80,40,.18);border-radius:3px}
-  .panel-body::-webkit-scrollbar-thumb:hover{background:rgba(120,80,40,.3)}
+  .panel-body::-webkit-scrollbar-thumb{background:rgba(60,80,110,.18);border-radius:3px}
+  .panel-body::-webkit-scrollbar-thumb:hover{background:rgba(60,80,110,.3)}
 
   .section-title{
     font-size:.66rem;font-weight:800;color:var(--ink-muted);
@@ -321,7 +321,7 @@
     border:1px solid var(--glass-edge-soft);
     border-radius:12px;
     border-left:4px solid var(--cat-outro);
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.6), 0 1px 2px rgba(80,40,20,.04);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.6), 0 1px 2px rgba(40,60,90,.04);
     transition:all .15s
   }
   .event-card:hover{background:rgba(255,253,250,.85)}
@@ -356,13 +356,13 @@
     display:inline-flex;align-items:center;justify-content:center;
     transition:all .12s
   }
-  .icon-btn:hover{background:rgba(120,80,40,.1);color:var(--ink)}
-  .icon-btn.danger:hover{background:rgba(200,16,46,.12);color:var(--primary)}
+  .icon-btn:hover{background:rgba(60,80,110,.1);color:var(--ink)}
+  .icon-btn.danger:hover{background:rgba(30,58,138,.12);color:var(--primary)}
   .icon-btn svg{width:15px;height:15px}
   .empty-events{
     padding:24px;text-align:center;color:var(--ink-muted);font-size:.85rem;
     background:rgba(255,253,250,.4);
-    border:1px dashed rgba(120,80,40,.18);
+    border:1px dashed rgba(60,80,110,.18);
     border-radius:12px;margin-bottom:24px
   }
 
@@ -379,7 +379,7 @@
     background:rgba(255,253,250,.7);
     backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
     color:var(--ink);transition:all .15s;width:100%;
-    box-shadow:inset 0 1px 2px rgba(80,40,20,.04)
+    box-shadow:inset 0 1px 2px rgba(40,60,90,.04)
   }
   .field input:focus,.field textarea:focus{
     outline:none;border-color:var(--ink);
@@ -406,7 +406,7 @@
   .cat-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 1px rgba(0,0,0,.06)}
   .panel-footer{
     padding:16px 28px;
-    border-top:1px solid rgba(120,80,40,.08);
+    border-top:1px solid rgba(60,80,110,.08);
     background:rgba(255,253,250,.4);
     display:flex;gap:8px;flex-shrink:0
   }
@@ -466,7 +466,7 @@
 
   <header class="topbar">
     <div class="brand">
-      <img src="expeditonetto.png" alt="Agenda Expedito Netto" class="brand-photo" onerror="this.style.background='linear-gradient(135deg,#c8102e,#7a0a1c)';this.removeAttribute('src')">
+      <img src="expeditonetto.png" alt="Agenda Expedito Netto" class="brand-photo" onerror="this.style.background='linear-gradient(135deg,#1e3a8a,#0f1d4a)';this.removeAttribute('src')">
       <div class="brand-text">
         <h1>Agenda Expedito Netto</h1>
         <div class="tag">Agenda Oficial · 2026</div>
@@ -571,7 +571,7 @@
 
   const months = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
   const weekdaysLong = ["Domingo","Segunda-feira","Terça-feira","Quarta-feira","Quinta-feira","Sexta-feira","Sábado"];
-  const CAT_COLORS = {publico:"#c8102e",reuniao:"#1f4e8c",visita:"#1f6f4a",imprensa:"#a04e0f",pessoal:"#5b3a8a",outro:"#4a4640"};
+  const CAT_COLORS = {publico:"#1e3a8a",reuniao:"#0d7490",visita:"#1f6f4a",imprensa:"#a04e0f",pessoal:"#5b3a8a",outro:"#4a4640"};
 
   const $ = id => document.getElementById(id);
   const idOf = (y,m,d) => `agenda_${y}_${m}_${d}`;
@@ -592,8 +592,9 @@
       const parsed = JSON.parse(raw.text);
       if (Array.isArray(parsed)) return parsed;
     } catch(e) {}
-    return [{ id: uid(), time:"", title: raw.text.split('\n')[0].slice(0,80) || "Compromisso",
-              location:"", category:"outro", notes: raw.text }];
+    // Fallback: texto legado vira um único evento, usando o texto COMPLETO como título
+    return [{ id: uid(), time:"", title: raw.text.trim() || "Compromisso",
+              location:"", category:"outro", notes: "" }];
   }
   function getEvents(y,m,d) {
     const id = idOf(y,m,d);
@@ -795,8 +796,8 @@
 
   // Estilos por categoria para exportação (inline, sem glass)
   const EXPORT_CAT = {
-    publico:  { border:'#c8102e', bg:'#fbeaea', text:'#7a0a1c' },
-    reuniao:  { border:'#1f4e8c', bg:'#e8eff8', text:'#16365e' },
+    publico:  { border:'#1e3a8a', bg:'#e6ecf6', text:'#0f1d4a' },
+    reuniao:  { border:'#0d7490', bg:'#e0eff3', text:'#0a4456' },
     visita:   { border:'#1f6f4a', bg:'#e8f3ec', text:'#154e35' },
     imprensa: { border:'#a04e0f', bg:'#fbeee2', text:'#6f370b' },
     pessoal:  { border:'#5b3a8a', bg:'#efeaf6', text:'#3e2860' },
@@ -824,6 +825,35 @@
     }
   }
 
+  // Calcula larguras de coluna proporcionais ao conteúdo de cada dia da semana.
+  // Colunas com texto longo ficam mais largas; colunas vazias/curtas, mais estreitas.
+  function computeColumnWidths(y, m) {
+    const lastDate = new Date(y, m+1, 0).getDate();
+    const weights = [0,0,0,0,0,0,0]; // Dom, Seg, Ter, Qua, Qui, Sex, Sáb
+
+    // Para cada dia, pega o MAIOR "peso" dos eventos como referência da coluna
+    for (let d = 1; d <= lastDate; d++) {
+      const wkd = new Date(y, m, d).getDay();
+      const events = getEvents(y, m, d);
+      let score = 0;
+      events.forEach(ev => {
+        score += (ev.title || '').length;
+        score += (ev.location || '').length * 0.7;
+        score += (ev.time || '').length * 0.5;
+      });
+      weights[wkd] = Math.max(weights[wkd], score);
+    }
+
+    // Raiz quadrada suaviza extremos (coluna com 200 chars não vira 25x mais larga)
+    const softened = weights.map(w => Math.sqrt(Math.max(w, 8)));
+    // Piso mínimo: cada coluna recebe pelo menos 65% da média (não some)
+    const avg = softened.reduce((a,b)=>a+b, 0) / 7;
+    const minVal = avg * 0.65;
+    const adjusted = softened.map(w => Math.max(w, minVal));
+    const total = adjusted.reduce((a,b)=>a+b, 0);
+    return adjusted.map(w => ((w/total) * 100).toFixed(3) + '%');
+  }
+
   // Constrói um container LIMPO para exportação. Usa <table> com table-layout:fixed
   // e estilos inline — evita bugs do html2canvas com CSS Grid moderno.
   function buildExportContainer(photoSrc) {
@@ -833,12 +863,13 @@
     const totalCells = Math.ceil((firstWeekday + lastDate) / 7) * 7;
     const today = new Date();
     const isToday = d => today.getFullYear()===y && today.getMonth()===m && today.getDate()===d;
+    const colWidths = computeColumnWidths(y, m);
 
     const wrapper = document.createElement('div');
     wrapper.style.cssText = `
       position:fixed;top:0;left:-10000px;
       width:1280px;padding:32px;
-      background:linear-gradient(135deg,#faf2e6 0%,#f5e8d6 100%);
+      background:linear-gradient(135deg,#f3f6fc 0%,#e6ecf6 100%);
       box-sizing:border-box;
       font-family:'Manrope',system-ui,sans-serif;
       color:#1a1411;
@@ -850,24 +881,24 @@
     for (let i = 0; i < totalCells; i++) {
       const isLastCol = (i + 1) % 7 === 0;
       const isLastRow = i >= totalCells - 7;
-      const borderRight  = isLastCol ? '' : 'border-right:1px solid rgba(120,80,40,.08);';
-      const borderBottom = isLastRow ? '' : 'border-bottom:1px solid rgba(120,80,40,.08);';
+      const borderRight  = isLastCol ? '' : 'border-right:1px solid rgba(60,80,110,.08);';
+      const borderBottom = isLastRow ? '' : 'border-bottom:1px solid rgba(60,80,110,.08);';
 
       if (i % 7 === 0) bodyHTML += '<tr>';
 
       if (i < firstWeekday || dc > lastDate) {
-        bodyHTML += `<td style="${borderRight}${borderBottom}height:140px;background:rgba(120,80,40,.025);vertical-align:top;width:14.285%;"></td>`;
+        bodyHTML += `<td style="${borderRight}${borderBottom}height:140px;background:rgba(60,80,110,.025);vertical-align:top;"></td>`;
       } else {
         const events = getEvents(y, m, dc);
         const wkd = new Date(y, m, dc).getDay();
         const isWeekend = wkd === 0 || wkd === 6;
-        const dayBg = isToday(dc) ? 'background:linear-gradient(180deg,rgba(200,16,46,.12) 0%,transparent 70%);' : '';
-        const dayNumColor = isWeekend ? '#c8102e' : '#1a1411';
+        const dayBg = isToday(dc) ? 'background:linear-gradient(180deg,rgba(30,58,138,.12) 0%,transparent 70%);' : '';
+        const dayNumColor = isWeekend ? '#1e3a8a' : '#1a1411';
 
         // Hoje: número branco em círculo vermelho
         let dayNumHTML;
         if (isToday(dc)) {
-          dayNumHTML = `<div style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:linear-gradient(135deg,#c8102e,#7a0a1c);color:#fff;border-radius:50%;font-family:'Fraunces',serif;font-size:13px;font-weight:700;margin-bottom:6px;line-height:1;">${dc}</div>`;
+          dayNumHTML = `<div style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:linear-gradient(135deg,#1e3a8a,#0f1d4a);color:#fff;border-radius:50%;font-family:'Fraunces',serif;font-size:13px;font-weight:700;margin-bottom:6px;line-height:1;">${dc}</div>`;
         } else {
           dayNumHTML = `<div style="font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:${dayNumColor};margin-bottom:6px;line-height:1;">${dc}</div>`;
         }
@@ -879,7 +910,7 @@
           evHTML += `<div style="font-size:10.5px;padding:4px 7px;margin-bottom:3px;border-left:3px solid ${cat.border};background:${cat.bg};color:${cat.text};border-radius:4px;font-weight:600;line-height:1.35;word-wrap:break-word;overflow-wrap:break-word;word-break:break-word;">${time}${escapeHTML(ev.title)}</div>`;
         });
 
-        bodyHTML += `<td style="${borderRight}${borderBottom}${dayBg}height:140px;padding:8px 8px 6px;vertical-align:top;width:14.285%;">
+        bodyHTML += `<td style="${borderRight}${borderBottom}${dayBg}height:140px;padding:8px 8px 6px;vertical-align:top;">
           ${dayNumHTML}
           ${evHTML}
         </td>`;
@@ -889,14 +920,14 @@
       if (isLastCol) bodyHTML += '</tr>';
     }
 
-    const headerCellStyle = 'padding:14px 6px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.22em;width:14.285%;border-bottom:1px solid rgba(120,80,40,.10);';
+    const headerCellStyle = 'padding:14px 6px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.22em;border-bottom:1px solid rgba(60,80,110,.10);';
 
     const photoHTML = photoSrc
-      ? `<img src="${photoSrc}" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 0 0 1px #c8102e,0 8px 24px rgba(200,16,46,.30);flex-shrink:0;display:block;">`
-      : `<div style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#c8102e,#7a0a1c);box-shadow:0 0 0 4px #fff,0 0 0 5px #c8102e;flex-shrink:0;"></div>`;
+      ? `<img src="${photoSrc}" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 0 0 1px #1e3a8a,0 8px 24px rgba(30,58,138,.30);flex-shrink:0;display:block;">`
+      : `<div style="width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#1e3a8a,#0f1d4a);box-shadow:0 0 0 4px #fff,0 0 0 5px #1e3a8a;flex-shrink:0;"></div>`;
 
     wrapper.innerHTML = `
-      <div style="display:flex;align-items:center;gap:24px;padding:24px 28px;margin-bottom:24px;background:#fff;border-radius:18px;border:1px solid rgba(0,0,0,.06);box-shadow:0 1px 2px rgba(80,40,20,.04),0 8px 24px rgba(80,40,20,.06);">
+      <div style="display:flex;align-items:center;gap:24px;padding:24px 28px;margin-bottom:24px;background:#fff;border-radius:18px;border:1px solid rgba(0,0,0,.06);box-shadow:0 1px 2px rgba(40,60,90,.04),0 8px 24px rgba(40,60,90,.06);">
         ${photoHTML}
         <div>
           <div style="font-family:'Fraunces',serif;font-size:32px;font-weight:700;letter-spacing:-.02em;line-height:1.1;">Agenda Expedito Netto</div>
@@ -908,16 +939,19 @@
         ${months[m]} <span style="color:#9a8f86;font-weight:400;">${y}</span>
       </div>
 
-      <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:18px;overflow:hidden;border:1px solid rgba(0,0,0,.06);table-layout:fixed;box-shadow:0 1px 2px rgba(80,40,20,.04),0 8px 24px rgba(80,40,20,.06);">
+      <table style="width:100%;border-collapse:collapse;background:#fff;border-radius:18px;overflow:hidden;border:1px solid rgba(0,0,0,.06);table-layout:fixed;box-shadow:0 1px 2px rgba(40,60,90,.04),0 8px 24px rgba(40,60,90,.06);">
+        <colgroup>
+          ${colWidths.map(w => `<col style="width:${w}">`).join('')}
+        </colgroup>
         <thead>
-          <tr style="background:#faf6ed;">
-            <th style="${headerCellStyle}color:#c8102e;">Dom</th>
+          <tr style="background:#f3f7fc;">
+            <th style="${headerCellStyle}color:#1e3a8a;">Dom</th>
             <th style="${headerCellStyle}color:#9a8f86;">Seg</th>
             <th style="${headerCellStyle}color:#9a8f86;">Ter</th>
             <th style="${headerCellStyle}color:#9a8f86;">Qua</th>
             <th style="${headerCellStyle}color:#9a8f86;">Qui</th>
             <th style="${headerCellStyle}color:#9a8f86;">Sex</th>
-            <th style="${headerCellStyle}color:#c8102e;">Sáb</th>
+            <th style="${headerCellStyle}color:#1e3a8a;">Sáb</th>
           </tr>
         </thead>
         <tbody>${bodyHTML}</tbody>
