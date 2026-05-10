@@ -760,9 +760,7 @@
     else events = [...events, ev];
     events.sort((a,b) => (a.time||'99').localeCompare(b.time||'99'));
     setEvents(y,m,d, events);
-    renderPanelEvents();
-    resetForm();
-    drawCalendar();
+    closePanel();
   }
   function deleteEvent(id) {
     if (!confirm('Excluir este compromisso?')) return;
