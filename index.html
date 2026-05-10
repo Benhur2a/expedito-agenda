@@ -444,8 +444,9 @@
     }
     .day.has-events.many::after{width:14px;height:5px;border-radius:100px}
     .panel{
-      top:auto;right:0;bottom:0;left:0;width:100vw;max-width:100vw;
-      height:90vh;border-radius:22px 22px 0 0;
+      top:0;right:0;bottom:0;left:0;
+      width:100vw;max-width:100vw;height:auto;
+      border-radius:0;
       transform:translateY(100%)
     }
     .panel.open{transform:translateY(0)}
@@ -555,7 +556,8 @@
 <div id="syncStatus">Sincronizando…</div>
 
 <script>
-  const API_URL = "https://script.google.com/macros/s/AKfycbw68ChWrRNLTvuxk6_JV9JDy2m0iCobM4_lgXmHidyBu1ZJuN-M14t03aSStcXx3jnICw/exec";
+  const API_URL = "https://script.google.com/macros/s/AKfycbzZhIAtJxRa8TPQMTDyKTdI7zlf_slJ8WuZnGopiPvXNJzOWw5t76QmYtrYI4fXIVhwOA/exec";
+  const SECRET_TOKEN = "AKfycbzZhIAtJxRa8TPQMTDyKTdI7zlf_slJ8WuZnGopiPvXNJzOWw5t76QmYtrYI4fXIVhwOA";
 
   let dt = new Date(2026, 1, 1);
   let globalData = {};
@@ -609,7 +611,7 @@
   async function init() {
     showStatus("Baixando agenda…", false);
     try {
-      const res = await fetch(API_URL + "?action=read");
+      const res = await fetch(`${API_URL}?action=read&token=${SECRET_TOKEN}`);
       globalData = await res.json() || {};
       showStatus("Agenda carregada");
     } catch(err) {
@@ -779,7 +781,7 @@
   async function saveToCloud(id, d, m, y, color, text) {
     showStatus("Salvando…", false);
     const dateLabel = `${d}/${m+1}/${y}`;
-    const url = `${API_URL}?action=save&id=${id}&dateLabel=${encodeURIComponent(dateLabel)}&color=${encodeURIComponent(color)}&text=${encodeURIComponent(text)}`;
+    const url = `${API_URL}?action=save&id=${id}&dateLabel=${encodeURIComponent(dateLabel)}&color=${encodeURIComponent(color)}&text=${encodeURIComponent(text)}&token=${SECRET_TOKEN}`;
     try {
       const fetchPromise = fetch(url, { mode:'no-cors' });
       const timeoutPromise = new Promise(r => setTimeout(r, 4000));
@@ -802,7 +804,6 @@
   };
 
   // Tenta converter a foto carregada na tela em base64 pra usar na exportação.
-  // Cobre o caso de CORS / canvas tainted retornando null se falhar.
   async function getPhotoDataURL() {
     const img = document.querySelector('.brand-photo');
     if (!img) return null;
@@ -817,13 +818,10 @@
       c.getContext('2d').drawImage(img, 0, 0);
       return c.toDataURL('image/png');
     } catch(e) {
-      // Canvas tainted — devolve o src original e deixa html2canvas tentar
       return img.src || null;
     }
   }
 
-  // Constrói um container LIMPO para exportação. Usa <table> com table-layout:fixed
-  // e estilos inline — evita bugs do html2canvas com CSS Grid moderno.
   function buildExportContainer(photoSrc) {
     const y = dt.getFullYear(), m = dt.getMonth();
     const firstWeekday = new Date(y, m, 1).getDay();
@@ -842,7 +840,6 @@
       color:#1a1411;
     `;
 
-    // Monta linhas da tabela
     let bodyHTML = '';
     let dc = 1;
     for (let i = 0; i < totalCells; i++) {
@@ -862,7 +859,6 @@
         const dayBg = isToday(dc) ? 'background:linear-gradient(180deg,rgba(200,16,46,.12) 0%,transparent 70%);' : '';
         const dayNumColor = isWeekend ? '#c8102e' : '#1a1411';
 
-        // Hoje: número branco em círculo vermelho
         let dayNumHTML;
         if (isToday(dc)) {
           dayNumHTML = `<div style="display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:linear-gradient(135deg,#c8102e,#7a0a1c);color:#fff;border-radius:50%;font-family:'Fraunces',serif;font-size:13px;font-weight:700;margin-bottom:6px;line-height:1;">${dc}</div>`;
@@ -932,7 +928,6 @@
     const wrapper = buildExportContainer(photoSrc);
     document.body.appendChild(wrapper);
 
-    // Pequena espera pra fonts/render finalizarem
     await new Promise(r => setTimeout(r, 300));
 
     try {
